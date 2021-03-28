@@ -9,7 +9,21 @@ const app = new express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use(cors())
+const whiteList = ['http://192.168.43.186:3099']
+const options = {
+    origin: (origin, callback) => {
+        callback(null, true)
+        // if (whiteList.indexOf(origin) !== -1) {
+        //     callback(null, true)
+        // } else {
+        //   callback(new Error('Not allowed by CORS'))
+        // }
+      },
+    credentials: true,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
+}
+
+app.use(cors(options))
 
 ApiRouters.forEach((router) => {
     app.use(router.prefix, router.file);
@@ -18,8 +32,4 @@ ApiRouters.forEach((router) => {
 const server = app.listen(runningPort, 'localhost', () => {
     const { address, port } = server.address()
     console.log(`Server running at http://${address}:${port}`)
-})
-
-app.get('/', (req, res) => {
-    res.send('Hellow Mock!')
 })

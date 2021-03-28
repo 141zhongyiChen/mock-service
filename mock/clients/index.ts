@@ -5,7 +5,6 @@ const express = require('express');
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-
   const pageIndex = Number(req.query.pageIndex) || 1;
   const pageSize = Number(req.query.pageSize) || 1;
 
@@ -28,6 +27,12 @@ router.get('/', (req, res, next) => {
     pageIndex,
     pageSize,
   }))
+
+})
+
+router.post('/test', (req, res, next) => {
+  console.log(req)
+  res.send('Hellow Bingo ')
 })
 
 export default router;
