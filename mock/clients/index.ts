@@ -1,11 +1,13 @@
-import { success } from '../utils/res-builder';
+import { success } from '../../utils/res-builder';
 
-const express = require('express')
+const express = require('express');
+
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
 
-  const { pageIndex, pageSize } = req.query
+  const pageIndex = Number(req.query.pageIndex) || 1;
+  const pageSize = Number(req.query.pageSize) || 1;
 
   res.json(success({
     [`list|${pageSize}`]: [
@@ -28,4 +30,4 @@ router.get('/', (req, res, next) => {
   }))
 })
 
-module.exports = router;
+export default router;

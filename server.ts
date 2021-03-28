@@ -1,15 +1,21 @@
+import ApiRouters from './router';
+import { runningPort } from './config';
+
 const express = require('express');
 
-// 引入路由中间件
-const clientRouter = require('./mock/clients')
+const cors = require('cors')
 
 const app = new express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api/v1/client', clientRouter)
+app.use(cors())
 
-const server = app.listen(8000, 'localhost', () => {
+ApiRouters.forEach((router) => {
+    app.use(router.prefix, router.file);
+})
+
+const server = app.listen(runningPort, 'localhost', () => {
     const { address, port } = server.address()
     console.log(`Server running at http://${address}:${port}`)
 })
