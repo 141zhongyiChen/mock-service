@@ -9,7 +9,7 @@ const app = new express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-const whiteList = ['http://192.168.43.186:3099']
+// const whiteList = ['http://192.168.43.186:3099']
 const options = {
     origin: (origin, callback) => {
         callback(null, true)
