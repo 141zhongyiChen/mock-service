@@ -1,6 +1,6 @@
 const Mock = require('mockjs')
 
-export const success = (data) => {
+export const success = <T>(data: T) => {
   const result = Mock.mock({
     ...data
   })

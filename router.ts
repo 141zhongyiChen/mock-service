@@ -10,7 +10,7 @@ import clientRouter from './mock/clients';
  */
 const apiRouter: ApiRouters[] = [
     {
-        prefix: '/api/v1/clients',
+        prefix: '/pro/crm/v5',
         file: clientRouter
     }
 ]

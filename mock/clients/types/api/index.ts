@@ -10,8 +10,8 @@ import {
     SEARCH_TYPE
 } from '../../../../types/enum-const';
 
-declare module '../../../../types/api/index' {
-    export namespace API.Customer.Summary {
+export namespace API {
+    export namespace Customer.Summary {
         export namespace GetList {
             export interface Params extends PAGE.OrderBy {
                 supporterId: number;
@@ -52,7 +52,7 @@ declare module '../../../../types/api/index' {
      *
      * Use The Same DTO
      */
-    export namespace API.Customer.All {
+    export namespace Customer.All {
         export interface Params extends PAGE.OrderBy, PAGE.Pagination {
             beginJoinedTime: number;
             endJoinedTime: number;
@@ -129,7 +129,7 @@ declare module '../../../../types/api/index' {
         export type Response = Types.Response.All<Data>;
     }
 
-    export namespace API.Customer.Favorites {
+    export namespace Customer.Favorites {
         export interface Params extends PAGE.OrderBy, PAGE.Pagination {
             groupId: number;
         }

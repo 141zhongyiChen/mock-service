@@ -13,11 +13,6 @@ app.use(express.urlencoded({ extended: false }))
 const options = {
     origin: (origin, callback) => {
         callback(null, true)
-        // if (whiteList.indexOf(origin) !== -1) {
-        //     callback(null, true)
-        // } else {
-        //   callback(new Error('Not allowed by CORS'))
-        // }
       },
     credentials: true,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE"
