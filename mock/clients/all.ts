@@ -32,7 +32,7 @@ export const getClinetList = (req): API.Customer.All.Data => {
                     tagName: '@ctitle(3,7)',
                     'tagOwnerType|1': [1,2,3],
                     tagUsageCategory: '@integer(60, 100)',
-                    'groupId|1-4': [74, 77, 81, 83]
+                    'groupId|1-4': [74, 77, 79, 80, 81]
                 }
             ],
             'favoriteGroups|4': [
@@ -42,17 +42,17 @@ export const getClinetList = (req): API.Customer.All.Data => {
             supporterId: '@integer(60, 100)',
             supporterName: '@last(6,10)',
             supporterAvatar: '@img(64x64,@color,avatar)',
-            'accountinfos|1': [
+            'accountinfos': [
                 {
                     uid: '@integer(60, 10000000)',
                     account: '@last(6,10)',
                     accountIndex: '@integer(10, 20)',
                     'accountType|1': [1,2],
-                    balance: '@integer(60, 100)',
-                    withdrawal: '@integer(60, 100)',
-                    deposit: '@integer(60, 100)',
-                    volume: '@integer(60, 100)',
-                    close: '@integer(60, 100)'
+                    balance: '@integer(6056, 16666600)',
+                    withdrawal: '@integer(60565, 17777700)',
+                    deposit: '@integer(60565, 10777770)',
+                    volume: '@integer(6045, 10777770)',
+                    close: '@integer(6560, 10777770)'
                 }
             ],
       },
