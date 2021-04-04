@@ -2,7 +2,7 @@ import { API } from './types/api'
 
 const Mock = require('mockjs')
 
-export const getBaseInfo = (req): API.User.All.Data => {  
+export const getBaseInfo = (req): API.Details.BaseInfo.Data => {  
   return Mock.mock({
             'id': '@integer(60, 10000000)',
             uid: '@integer(60, 10000000)',

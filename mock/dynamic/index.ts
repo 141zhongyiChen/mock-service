@@ -12,6 +12,10 @@ router.get('/GetAllDynamic', (req, res, next) => {
   res.json(success(getDynamicList(req)))
 })
 
+router.get('/GetDynamicByUid', (req, res, next) => {
+  res.json(success(getDynamicList(req)))
+})
+
 console.log(router)
 
 export default router;

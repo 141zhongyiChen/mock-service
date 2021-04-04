@@ -1,7 +1,8 @@
 import { Types } from '../../../../types/types';
 import {
     GENDER,
-    USER_STATUS
+    USER_STATUS,
+    TAG_OWNER_TYPE
 } from '../../../../types/enum-const';
 
 export namespace API.Details.BaseInfo {
@@ -34,6 +35,14 @@ export namespace API.Details.BaseInfo {
         deposit: number;
         tags: Tag[];
         favoriteGroups: number[];
+    }
+
+    export interface Tag {
+        tagId: number;
+        tagName: string;
+        tagOwnerType: TAG_OWNER_TYPE;
+        tagUsageCategory: number;
+        groupId: number;
     }
 
     export type Response = Types.Response.All<Data>;

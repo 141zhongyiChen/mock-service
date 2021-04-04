@@ -25,7 +25,7 @@ const apiRouter: ApiRouters[] = [
         file: userRouter
     },
     {
-        prefix: '/pro/crm/v5/Details',
+        prefix: '/pro/crm/v5/Detail',
         file: detailsRouter
     }
 ]
