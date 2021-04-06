@@ -10,6 +10,7 @@ export const getAccountList = (req): API.Details.Account.Data => {
             brokerName: '@last(6,10)',
             brokerIconUrl: '@img(64x64,@color,avatar)',
             account: '@ctitle(3,4)',
+            'accountStatus|1': [1, 2, 3], 
             brokerServer: '@ctitle(3,7)',
             accountIndex: '@integer(0, 60)',
             'accountType|1': [0, 1, 2, 3, 4],
