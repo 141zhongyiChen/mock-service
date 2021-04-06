@@ -12,9 +12,18 @@ export enum GENDER {
  * 1:正常 2: 禁用 3: 注销
  */
 export enum USER_STATUS {
+    DEMO = 0,
     NORMAL = 1,
     DISABLED = 2,
     CANCEL = 3
+}
+
+export enum DETAIL_ACCOUNT_TYPE {
+    DEMO = 0,
+    API = 1,
+    SAM = 2,
+    MAM = 3,
+    PRO = 4
 }
 
 /**
@@ -23,6 +32,7 @@ export enum USER_STATUS {
  * 1:交易员 2: 跟随着
  */
 export enum ACCOUNT_TYPE {
+    DEMO = 0,
     TRADER = 1,
     FOLLOWER = 2
 }
