@@ -2,7 +2,7 @@ import { API } from './types/api'
 
 const Mock = require('mockjs')
 
-export const getDynamicList = (req): API.Customer.Dynamic.Data => {
+export const getCallbackList = (req): API.Callback.Data => {
   const pageIndex = Number(req.query.pageIndex) || 1;
   const pageSize = Number(req.query.pageSize) || 1;
   
@@ -19,4 +19,8 @@ export const getDynamicList = (req): API.Customer.Dynamic.Data => {
     pageIndex,
     pageSize
   })
+}
+
+export const addCallback = () => {
+  return null
 }

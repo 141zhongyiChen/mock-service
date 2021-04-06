@@ -1,12 +1,12 @@
 const Mock = require('mockjs')
 
-export const success = <T>(data: T) => {
+export const success = <T>(data: T, message = '') => {
   const result = Mock.mock({
     ...data
   })
   return {
     code: 0,
-    message: '',
+    message,
     data: {
       ...result
     }

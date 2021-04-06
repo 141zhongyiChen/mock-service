@@ -12,9 +12,9 @@ export const getBaseInfo = (req): API.Details.BaseInfo.Data => {
             country: '@ctitle(3,4)',
             'gender|1': [0, 1],
             'userStatus|1': [1,2,3],
-            joinedTime: '@integer(1614943810000, 1624943810000)',
-            lastLoginTime: '@integer(1614943810000, 1624943810000)',
-            callbackTime: '@integer(1614943810000, 1624943810000)',
+            joinedTime: '@integer(1517676345, 1617676345)',
+            lastLoginTime: '@integer(1517676345, 1617676345)',
+            callbackTime: '@integer(1517676345, 1617676345)',
             connectedCount: '@integer(60, 100)',
             connectedMaxBalance: '@integer(60, 100)',
             'openAccountCount|1': [0, 1, 2, 33 ,4], // 开户数

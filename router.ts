@@ -7,6 +7,7 @@ import clientRouter from './mock/clients';
 import dynamicRouter from './mock/dynamic';
 import userRouter from './mock/user';
 import detailsRouter from './mock/details';
+import callbackRouter from './mock/callback';
 
 /**
  * add router here
@@ -27,6 +28,10 @@ const apiRouter: ApiRouters[] = [
     {
         prefix: '/pro/crm/v5/Detail',
         file: detailsRouter
+    },
+    {
+        prefix: '/pro/crm/v5/Callback',
+        file: callbackRouter
     }
 ]
 

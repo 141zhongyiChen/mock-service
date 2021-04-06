@@ -22,10 +22,10 @@ export const getClinetList = (req): API.Customer.All.Data => {
             postCount: '@integer(60, 100)',
             fcoin: '@integer(60, 100)',
             connectedCount: '@integer(60, 100)',
-            lastLoginTime: '@integer(1614943810000, 1624943810000)',
-            callbackTime: '@integer(1614943810000, 1624943810000)',
-            approvedTime: '@integer(1614943810000, 1624943810000)',
-            lastTradeTime: '@integer(1614943810000, 1624943810000)',
+            lastLoginTime: '@integer(1517676345, 1617676345)',
+            callbackTime: '@integer(1517676345, 1617676345)',
+            approvedTime: '@integer(1517676345, 1617676345)',
+            lastTradeTime: '@integer(1517676345, 1617676345)',
             'tags|3-10': [
                 {
                     'tagId|+1': (pageIndex - 1) * pageSize + 1,
