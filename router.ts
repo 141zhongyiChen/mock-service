@@ -10,6 +10,8 @@ import detailsRouter from './mock/details';
 import callbackRouter from './mock/callback';
 import accountRouter from './mock/account';
 
+// import searchRouter from './mock/global-search';
+
 /**
  * add router here
  */
@@ -23,7 +25,7 @@ const apiRouter: ApiRouters[] = [
         file: dynamicRouter
     },
     {
-        prefix: '/pro/crm/v5/User',
+        prefix: '/api/gw/v1/pro/crm/user',
         file: userRouter
     },
     {
@@ -38,6 +40,10 @@ const apiRouter: ApiRouters[] = [
         prefix: '/pro/crm/v5/Account',
         file: accountRouter
     }
+    // {
+    //     prefix: '/api/v1/crm',
+    //     file: searchRouter
+    // }
 ]
 
 export default apiRouter;

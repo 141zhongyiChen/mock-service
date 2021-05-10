@@ -4,11 +4,11 @@ import { getUserList } from './user';
 const express = require('express');
 const router = express.Router()
 
-router.get('/GetUserFavoriteListInfo', (req, res, next) => {
+router.get('/list/favorite', (req, res, next) => {
   res.json(success(getUserList(req)))
 })
 
-router.post('/GetAllUserListInfo', (req, res, next) => {
+router.post('/list/all', (req, res, next) => {
   res.json(success(getUserList(req)))
 })
 
