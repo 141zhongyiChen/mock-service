@@ -38,6 +38,7 @@ export const getUserList = (req): API.User.All.Data => {
             'favoriteGroups|4': [
                 '@integer(60, 100)'
             ],
+            'mlm|0-5':['T'], 
             avatar: '@img(64x64,@color,avatar)',
             supporterId: '@integer(60, 100)',
             supporterName: '@last(6,10)',

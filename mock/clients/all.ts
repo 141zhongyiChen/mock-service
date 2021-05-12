@@ -3,8 +3,8 @@ import { API } from './types/api'
 const Mock = require('mockjs')
 
 export const getClinetList = (req): API.Customer.All.Data => {
-  const pageIndex = Number(req.query.pageIndex) || 1;
-  const pageSize = Number(req.query.pageSize) || 1;
+  const pageIndex = Number(req.body.pageIndex) || 1;
+  const pageSize = Number(req.body.pageSize) || 1;
   
   return Mock.mock({
     [`items|${pageSize}`]: [
@@ -22,7 +22,7 @@ export const getClinetList = (req): API.Customer.All.Data => {
             postCount: '@integer(60, 100)',
             fcoin: '@integer(60, 100)',
             connectedCount: '@integer(60, 100)',
-            lastLoginTime: '@integer(1517676345, 1617676345)',
+            lastLoginTime: '@integer(1513676345, 1514676345)',
             callbackTime: '@integer(1517676345, 1617676345)',
             approvedTime: '@integer(1517676345, 1617676345)',
             lastTradeTime: '@integer(1517676345, 1617676345)',

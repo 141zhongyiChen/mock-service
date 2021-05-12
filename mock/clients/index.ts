@@ -4,11 +4,11 @@ import { getClinetList } from './all';
 const express = require('express');
 const router = express.Router()
 
-router.get('/GetCustomersAllList', (req, res, next) => {
+router.post('/list/all', (req, res, next) => {
   res.json(success(getClinetList(req)))
 })
 
-router.get('/GetCustomersFavoriteList', (req, res, next) => {
+router.post('/list/favorite', (req, res, next) => {
   res.json(success(getClinetList(req)))
 })
 
