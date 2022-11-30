@@ -27,7 +27,5 @@ ApiRouters.forEach((router) => {
 
 const server = app.listen(runningPort, 'localhost', () => {
     const { address, port } = server.address()
-    console.log('======================')
     console.log(`Server running at http://${address}:${port}`)
-    console.log('======================')
 })
