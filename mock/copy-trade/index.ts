@@ -4,7 +4,7 @@ import { getBaseInfo } from './details';
 const express = require('express');
 const router = express.Router()
 
-router.get('/GetBaseInfos', (req, res, next) => {
+router.post('/biz/public/signal/list', (req, res, next) => {
   res.json(success(getBaseInfo(req)))
 })
 

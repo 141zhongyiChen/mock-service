@@ -10,7 +10,7 @@ import copyTrade from './mock/copy-trade';
  */
 const apiRouter: ApiRouters[] = [
     {
-        prefix: '/api/gw/v1/pro/crm/customer',
+        prefix: '/api/v1/pro/copytrade',
         file: copyTrade
     }
 ]
