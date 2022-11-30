@@ -1,8 +1,6 @@
-import { API } from './types/api'
-
 const Mock = require('mockjs')
 
-export const getBaseInfo = (req): API.Details.BaseInfo.Data => {  
+export const test = (req) => {  
   return Mock.mock({
             'id': '@integer(60, 10000000)',
             uid: '@integer(60, 10000000)',
@@ -35,6 +33,8 @@ export const getBaseInfo = (req): API.Details.BaseInfo.Data => {
             avatar: '@img(64x64,@color,avatar)',
             supporterId: '@integer(60, 100)',
             supporterName: '@last(6,10)',
-            supporterAvatar: '@img(64x64,@color,avatar)'
+            supporterAvatar: '@img(64x64,@color,avatar)',
+            city: '@city()',
+            'mlm|0-5':['T']
   })
 }
