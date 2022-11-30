@@ -11,17 +11,17 @@ app.use(express.urlencoded({ extended: false }))
 
 const whitelist = ['https://www.betadcasia.com', 'http://192.168.20.22:3139']
 const corsOptions = {
-  origin: function (origin, callback) {
-    callback(null, true)
-  },
-  credentials: true,
-  methods: allowMethods
+  origin: whitelist,
+  methods: allowMethods,
+  allowedHeaders: 'Test-CORS, Content-Type, Accept',
+  maxAge: 1728000,
+  credentials: true
 }
 
 app.use(cors(corsOptions))
 
 ApiRouters.forEach((router) => {
-    app.use(router.prefix, router.file, cors(corsOptions));
+    app.use(router.prefix, router.file);
 })
 
 const server = app.listen(runningPort, 'localhost', () => {
