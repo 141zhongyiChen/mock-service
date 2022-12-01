@@ -1,11 +1,11 @@
 import { success } from '../../utils/res-builder';
-import { getBaseInfo } from './details';
+import { getSignalList } from './signal-list';
 
 const express = require('express');
 const router = express.Router()
 
 router.post('/biz/public/signal/list', (req, res, next) => {
-  res.json(success(getBaseInfo(req)))
+  res.json(success(getSignalList(req)))
 })
 
 export default router;
