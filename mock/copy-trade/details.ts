@@ -5,7 +5,7 @@ export const getBaseInfo = (req) => {
             'id': '@integer(60, 10000000)',
             uid: '@integer(60, 10000000)',
             nickName: '@last(6,10)',
-            phone: '@phone()',
+            phone: '@last(11)',
             email: '@email()',
             country: '@ctitle(3,4)',
             'gender|1': [0, 1],
