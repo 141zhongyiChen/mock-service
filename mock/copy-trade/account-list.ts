@@ -9,7 +9,7 @@ export const getAccountList = (req) => {
                 userId: '@integer(60, 10000000)',
                 serverId: '@integer(60, 10000000)',
                 account: '@last(6,10)',
-                type: 1,
+                type: '@integer(2, 3)',
                 signal:  {
                     id: '@integer(60, 1000)',
                     description: '@last(11)',
