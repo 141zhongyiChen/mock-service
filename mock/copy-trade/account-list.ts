@@ -16,7 +16,7 @@ export const getAccountList = (req) => {
                     userId: '@integer(60, 10000000)',
                     serverId: '@integer(60, 10000000)',
                     account: '@last(6,10)',
-                    name: '@string(10, 40)',
+                    name: '@string(10, 20)',
                     avatarUrl: '@img(64x64,@color,@last)',
                     smallAvatarUrl: '@img(64x64,@color,@last)',
                     coverUrl: '@img(64x64,@color,@last)',
@@ -30,7 +30,7 @@ export const getAccountList = (req) => {
                     equity: '@integer(2000, 10000)',
                     maxDD: '@integer(1000, 100000)',
                     followingAmount: '@float(-100000000000, 100000000000, 0, 3)',
-                    followingCount: '@float(-100000000000, 100000000000, 0, 3)',
+                    followingCount: '@integer(5, 20)',
                     profitByFollowing: '@float(-100000000000, 100000000000, 0, 3)',
                     followingListJson: JSON.stringify({}),
                     'followingList|3-10': [
