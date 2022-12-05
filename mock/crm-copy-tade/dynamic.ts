@@ -10,6 +10,7 @@ export const getDynamicList = (req) => {
             totalCount: 0
         }
     }
+
     const getParams = () => {
         return Mock.mock({
             signalId: '@integer(60, 1000)',
@@ -32,6 +33,9 @@ export const getDynamicList = (req) => {
             followingAmount: '@integer(10, 90)',
             followingCount: '@integer(10, 90)',
             followerProfit: '@integer(10, 90)',
+            'files|1-3': [
+                '@img(64x64,@color,@last)'
+            ],
             'followingList|3-10': [
                 {
                     userId: '@integer(60, 1000)',
@@ -55,8 +59,20 @@ export const getDynamicList = (req) => {
                 customerId: '@integer(60, 1000)',
                 name: '@last(11)',
                 userId: '@integer(60, 1000)',
-                'code|1': [2, 3],
-                'type|1': [1, 2, 3],
+                'code|1': [
+                    'TradeSignalCreated',
+                    'TradeSignalChanged',
+                    'TradeSignalStartFollowed',
+                    'TradeSignalStopFollowed',
+                    'TradeSignalGetProfileSharing',
+                    'FollowerAccountCreated',
+                    'FollowerFollowSucceed',
+                    'FollowerStoppingFollowing',
+                    'FollowerStoppedFollowing',
+                    'FollowerProfileSharing',
+                    'FollowerAccountChanged'
+                ],
+                'type|1': [5, 6],
                 title: '@last(11)',
                 content: '@last(6,10)',
                 dynamicTime:  '@integer(1517676345, 1617676345)',
