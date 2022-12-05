@@ -4,16 +4,12 @@ import { getDynamicList } from './dynamic';
 const express = require('express');
 const router = express.Router()
 
-router.post('/dynamic/list/copyTrade', (req, res, next) => {
-  res.json(success(getDynamicList(req)))
+router.post('/dynamic/list/copyTrade/trader', async (req, res, next) => {
+  res.json(await success(getDynamicList(req)))
 })
 
-router.post('/dynamic/list/copyTrade/signal', (req, res, next) => {
-  res.json(success(getDynamicList(req)))
-})
-
-router.post('/dynamic/list/copyTrade/follower', (req, res, next) => {
-  res.json(success(getDynamicList(req)))
+router.post('list/copyTrade', async (req, res, next) => {
+  res.json(await success(getDynamicList(req)))
 })
 
 export default router;

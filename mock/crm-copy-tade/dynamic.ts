@@ -4,6 +4,12 @@ export const getDynamicList = (req) => {
     const pageIndex = req.body.pageIndex || 1
     const pageSize = pageIndex > 10 ? 0 : req.body.pageSize || 20
 
+    if (pageIndex > pageIndex) {
+        return {
+            items: [],
+            totalCount: 0
+        }
+    }
     const getParams = () => {
         return Mock.mock({
             signalId: '@integer(60, 1000)',
@@ -50,11 +56,11 @@ export const getDynamicList = (req) => {
                 name: '@last(11)',
                 userId: '@integer(60, 1000)',
                 'code|1': [2, 3],
-                'type': [1, 2, 3],
+                'type|1': [1, 2, 3],
                 title: '@last(11)',
                 content: '@last(6,10)',
                 dynamicTime:  '@integer(1517676345, 1617676345)',
-                parameters: JSON.parse(getParams()),
+                parameters: JSON.stringify(getParams()),
                 customerType: 0,
                 account: '@integer(10068, 200454)'
             }
