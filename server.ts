@@ -9,7 +9,7 @@ const app = new express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-const whitelist = ['https://www.betadcasia.com', /192.168./]
+const whitelist = [/betadcasia.com/, /192.168./]
 const corsOptions = {
   origin: whitelist,
   methods: allowMethods,
