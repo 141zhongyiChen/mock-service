@@ -1,8 +1,6 @@
 const Mock = require('mockjs')
 
-export const getSignalList = (req) => {
-    const pageIndex = req.body.pageIndex || 1
-    const pageSize = pageIndex > 10 ? 0 : req.body.pageSize || 20
+const getItems = (pageSize: number) => {
     return Mock.mock({
         [`items|${pageSize}`]: [
             {
@@ -40,7 +38,27 @@ export const getSignalList = (req) => {
                 followingAccount: '@integer(2000, 10000)',
                 favorite: '@boolean()'
             }
-        ],
+        ]
+      }).items
+}
+
+export const getSignalList = (req) => {
+    const pageIndex = req.body.pageIndex || 1
+    const pageSize = pageIndex > 10 ? 0 : req.body.pageSize || 20
+    if (String(req.body.keyword).includes('search')) {
+        return {
+            items: [],
+            totalCount: 0
+        }
+    }
+    return Mock.mock({
+        items: getItems(pageSize),
         totalCount: 152,
       })
+}
+
+export const getFavoritesList = (req) => {
+    const pageIndex = req.body.pageIndex || 1
+    const pageSize = pageIndex > 10 ? 0 : req.body.pageSize || 20
+    return getItems(pageSize)
 }
