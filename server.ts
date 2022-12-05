@@ -13,7 +13,7 @@ const whitelist = [/betadcasia.com/, /192.168./]
 const corsOptions = {
   origin: whitelist,
   methods: allowMethods,
-  allowedHeaders: 'Test-CORS, Content-Type, Accept',
+  allowedHeaders: 'Content-Type, Accept',
   maxAge: 1728000,
   credentials: true
 }
