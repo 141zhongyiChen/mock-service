@@ -15,7 +15,7 @@ const apiRouter: ApiRouters[] = [
         file: copyTrade
     },
     {
-        prefix: '/iapi/v1/pro/copytrade',
+        prefix: '/iapi/v1/pro/crm',
         file: crmCopyTrade
     }
 ]
