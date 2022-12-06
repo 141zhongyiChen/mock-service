@@ -5,16 +5,16 @@ import { getAccountList } from './account-list';
 const express = require('express');
 const router = express.Router()
 
-router.post('/biz/public/signal/list', (req, res, next) => {
-  res.json(success(getSignalList(req)))
+router.post('/biz/public/signal/list',async (req, res, next) => {
+  res.json(await success(getSignalList(req)))
 })
 
-router.get('/biz/signal/favorites/list', (req, res, next) => {
-  res.json(success(getFavoritesList(req)))
+router.get('/biz/signal/favorites/list', async (req, res, next) => {
+  res.json(await success(getFavoritesList(req)))
 })
 
-router.get('/biz/account/list', (req, res, next) => {
-  res.json(success(getAccountList(req)))
+router.get('/biz/account/list', async (req, res, next) => {
+  res.json(await success(getAccountList(req)))
 })
 
 export default router;
