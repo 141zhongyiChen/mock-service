@@ -17,4 +17,8 @@ router.get('/biz/account/list', async (req, res, next) => {
   res.json(await success(getAccountList(req)))
 })
 
+router.post('/biz/profitsharing/:account/list', async (req, res, next) => {
+  res.json(await success(getAccountList(req)))
+})
+
 export default router;

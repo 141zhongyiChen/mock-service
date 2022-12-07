@@ -8,7 +8,7 @@ router.post('/dynamic/list/copyTrade/trader', async (req, res, next) => {
   res.json(await success(getDynamicList(req)))
 })
 
-router.post('list/copyTrade', async (req, res, next) => {
+router.post('/dynamic/list/copyTrade', async (req, res, next) => {
   res.json(await success(getDynamicList(req)))
 })
 
