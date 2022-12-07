@@ -1,6 +1,7 @@
 import { success } from '../../utils/res-builder';
 import { getSignalList, getFavoritesList } from './signal-list';
 import { getAccountList } from './account-list';
+import { getHwmList } from './hwm';
 
 const express = require('express');
 const router = express.Router()
@@ -18,7 +19,7 @@ router.get('/biz/account/list', async (req, res, next) => {
 })
 
 router.post('/biz/profitsharing/:account/list', async (req, res, next) => {
-  res.json(await success(getAccountList(req)))
+  res.json(await success(getHwmList(req)))
 })
 
 export default router;
