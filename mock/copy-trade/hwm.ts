@@ -3,7 +3,7 @@ const Mock = require('mockjs')
 export const getHwmList = (req) => {
     const pageIndex = req.body.pageIndex || 1
 
-    const pageSize = pageIndex > 3 ? 0 : req.body.pageSize || 20
+    const pageSize = pageIndex > 3 ? 0 : 100 || 20
 
     const getFollower = () => {
         return Mock.mock({
