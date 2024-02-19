@@ -1,4 +1,4 @@
-import { uid, account, img, negative, random, str, bool, millionSeconds } from "../../utils/mock-builder"
+import { uid, account, img, random, str, bool, millionSeconds } from "../../utils/mock-builder"
 import { success } from "../../utils/res-builder"
 
 const Mock = require('mockjs')
@@ -90,7 +90,7 @@ const getSignalSetInfo = (req) => {
        * 用在的频道
        */
       'channelInfos|1-4': Mock.mock({
-        'list|1-4': [
+        ['list|1-4']: [
           {
             channelId: uid,
             channelName: str
@@ -220,7 +220,7 @@ const signalInviteReject = (req) => {
 }
 const getSignalList = (req) => {
   return Mock.mock({
-    'list|20': [
+    ['list|20']: [
       {
         id: uid,
         signalName: str,
