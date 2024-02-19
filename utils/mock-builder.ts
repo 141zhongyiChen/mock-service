@@ -38,6 +38,6 @@ export const getSignalList = (req) => {
         supporterAvatar: "@img(64x64,@color,avatar)",
       },
     ],
-    totalCount: 200, //`@integer(${pageIndex * pageSize},300)`,
+    totalCount: `@integer(${pageIndex * pageSize},300)`
   });
 };

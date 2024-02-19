@@ -9,7 +9,7 @@ const app = new express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-const whitelist = [/betadcasia.com/, /192.168./]
+const whitelist = [/betafollowme.com/, /192.168./]
 const corsOptions = {
   origin: whitelist,
   methods: allowMethods,
@@ -25,6 +25,6 @@ ApiRouters.forEach((router) => {
 })
 
 const server = app.listen(runningPort, 'localhost', () => {
-    const { address, port } = server.address()
-    console.log(`Server running at http://${address}:${port}`)
+    const { port } = server.address()
+    console.log(`Server running at http://localhost:${port}`)
 })
