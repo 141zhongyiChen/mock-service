@@ -1,6 +1,8 @@
+import { success } from '../../utils/res-builder';
+
 const Mock = require('mockjs')
 
-export const getUserInfo = (req) => {
+const getUserInfo = (req) => {
     return Mock.mock({
         id: '@integer(60, 1000)',
         nickName: '@last(11)',
@@ -10,7 +12,7 @@ export const getUserInfo = (req) => {
     })
 }
 
-export const getUserInfoExternal = (req) => {
+const getUserInfoExternal = (req) => {
     return Mock.mock({
         id: '@integer(60, 1000)',
         nickName: '@last(11)',
@@ -21,7 +23,7 @@ export const getUserInfoExternal = (req) => {
     })
 }
 
-export const getCommunityList = (req) => {
+const getCommunityList = (req) => {
     return Mock.mock({
         ['list|4']: [
             {
@@ -33,7 +35,7 @@ export const getCommunityList = (req) => {
     }).list
 }
 
-export const getChannelList = (req) => {
+const getChannelList = (req) => {
     return Mock.mock({
         ['list|4']: [
             {
@@ -46,4 +48,23 @@ export const getChannelList = (req) => {
     }).list
 }
 
+const useRouter = (router) => {
+    router.get('/userInfo/external/my', async (req, res, next) => {
+        res.json(await success(getUserInfoExternal(req)))
+      })
+      
+      router.get('/userInfo/my', async (req, res, next) => {
+        res.json(await success(getUserInfo(req)))
+      })
+      
+      router.get('/community/getChannelList', async (req, res, next) => {
+        res.json(await success(getChannelList(req)))
+      })
+        
+      router.get('/community/getCommunityList', async (req, res, next) => {
+        res.json(await success(getCommunityList(req)))
+      })
+}
+
+export default useRouter;
 
