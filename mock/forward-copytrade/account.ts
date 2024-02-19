@@ -1,4 +1,4 @@
-import { uid, account, img, negative, random, str, bool } from "../../utils/mock-builder"
+import { uid, account, img, negative, random, str, bool, millionSeconds } from "../../utils/mock-builder"
 import { success } from "../../utils/res-builder"
 
 const Mock = require('mockjs')
@@ -11,7 +11,7 @@ const getTradeAccountMyList = (req) => {
                 brokerId: uid,
                 account,
                 index: uid, // 序号
-                'status|1': [0, 1],// 账户连接状态
+                'status|1': [uid, 1],// 账户连接状态
                 nickName: str,
                 serverInfo: {
                     brokerName: str,
@@ -275,6 +275,36 @@ const getFollowInfo = (req) => {
     }).list
 }
 
+const getTradeAccountMyDetail = (req) => {
+    return Mock.mock({
+        list: {
+            id: uid,
+            brokerId: uid,
+            account,
+            index: uid,
+            timezone: uid,
+            leverage: uid,
+            firstBindTime: millionSeconds,
+            status: uid,
+            serverInfo: {
+                brokerName: str,
+                name: str,
+                company: str,
+                logo: img
+            },
+            'bindRecords|0-4': [
+                {
+                    bindId: uid,
+                    // 绑定状态: number类型
+                    status: uid,
+                    // 绑定时间: 毫秒
+                    bindTime: millionSeconds
+                }
+            ]
+        }
+    }).list
+}
+
 
 const useRouter = (router) => {
       router.get('/tradeAccount/my/list', async (req, res, next) => {
@@ -291,6 +321,10 @@ const useRouter = (router) => {
 
       router.get('/follow/getFollowInfo/:id(\\d+)', async (req, res, next) => {
         res.json(await success(getFollowInfo(req)))
+      })
+
+      router.get('/tradeAccount/my/detail', async (req, res, next) => {
+        res.json(await success(getTradeAccountMyDetail(req)))
       })
 }
 
