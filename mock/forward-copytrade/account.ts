@@ -305,6 +305,26 @@ const getTradeAccountMyDetail = (req) => {
     }).list
 }
 
+const getFollowRiskControl = (req) => {
+    return Mock.mock({
+        list: {
+            isFollowOpen: bool,
+            equityProtected: random,
+            maxSingleTradeLots: random,
+            maxPositionLots: random
+        }
+    }).list
+}
+
+const getFollowTradeAccountFunds = (req) => {
+    return Mock.mock({
+        list: {
+            profit: random,
+            equity: random
+        }
+    }).list
+}
+
 
 const useRouter = (router) => {
       router.get('/tradeAccount/my/list', async (req, res, next) => {
@@ -325,6 +345,26 @@ const useRouter = (router) => {
 
       router.get('/tradeAccount/my/detail', async (req, res, next) => {
         res.json(await success(getTradeAccountMyDetail(req)))
+      })
+
+      router.post('/follow/update', async (req, res, next) => {
+        res.json(await success(null))
+      })
+
+      router.post('/follow/stop:id(\\d+)', async (req, res, next) => {
+        res.json(await success(null))
+      })
+
+      router.get('/follow/getFollowRiskControl', async (req, res, next) => {
+        res.json(await success(getFollowRiskControl(req)))
+      })
+
+      router.post('/follow/tradeAccount/funds', async (req, res, next) => {
+        res.json(await success(getFollowTradeAccountFunds(req)))
+      })
+
+      router.get('/follow/setFollowRiskControl', async (req, res, next) => {
+        res.json(await success(null))
       })
 }
 
