@@ -11,7 +11,7 @@ const getTradeAccountMyList = (req) => {
                 brokerId: uid,
                 account,
                 index: uid, // 序号
-                'status|1': [uid, 1],// 账户连接状态
+                'status|1': [0, 1],// 账户连接状态
                 nickName: str,
                 serverInfo: {
                     brokerName: str,
@@ -325,6 +325,154 @@ const getFollowTradeAccountFunds = (req) => {
     }).list
 }
 
+/** ********* Order ********* */
+const getTradeOrderHistoryFollow = (req) => {
+    const list = Mock.mock({
+        ['list|20']: [
+            {
+                pips: random,
+                order: account, // order num
+                signalBrokerId: random,
+                signalAccount: account,
+                signalName: str,
+                signalAccountIndex: account,
+                signalOrder: account,
+                brokerLots: random,
+                //
+                account,  
+                brokerId: random,
+                closePrice: random, // 平仓价
+                commission: random,
+                lots: random,
+                netProfit: random,
+                openPrice: random, // 开仓价
+                openTime: random,
+                profit: random, // pl
+                sl: random,
+                swaps: random,
+                symbol: str,
+                tp: random,
+                'tradeType|1': [0,1], // 0 buy || 1 sell
+            }
+        ]
+    }).list
+
+    const pageIndex = req.body.pageSize || 1;
+    const pageSize = pageIndex > 10 ? 0 : req.body.pageSize || 20;
+    return Mock.mock({
+        items: list,
+        sum: Mock.mock({
+            sum: {
+                totalCommission: random,
+                totalCount: random,
+                totalLots: random,
+                totalNetProfit: random,
+                totalProfit: random,
+                totalSwaps: random
+            }
+        }).sum,
+        totalCount: `@integer(${pageIndex * pageSize},300)`
+    });
+}
+
+const getTradeOrderHistory = (req) => {
+    const list = Mock.mock({
+        ['list|20']: [
+            {
+                pips: random,
+                order: account, // order num
+                signalBrokerId: random,
+                signalAccount: account,
+                signalName: str,
+                signalAccountIndex: account,
+                signalOrder: account,
+                brokerLots: random,
+                //
+                account,  
+                brokerId: random,
+                closePrice: random, // 平仓价
+                commission: random,
+                lots: random,
+                netProfit: random,
+                openPrice: random, // 开仓价
+                openTime: random,
+                profit: random, // pl
+                sl: random,
+                swaps: random,
+                symbol: str,
+                tp: random,
+                'tradeType|1': [0,1], // 0 buy || 1 sell
+            }
+        ]
+    }).list
+
+    const pageIndex = req.body.pageSize || 1;
+    const pageSize = pageIndex > 10 ? 0 : req.body.pageSize || 20;
+    return Mock.mock({
+        items: list,
+        sum: Mock.mock({
+            sum: {
+                totalCommission: random,
+                totalCount: random,
+                totalLots: random,
+                totalNetProfit: random,
+                totalProfit: random,
+                totalSwaps: random
+            }
+        }).sum,
+        totalCount: `@integer(${pageIndex * pageSize},300)`
+    });
+}
+
+const getTradeOrderPosition = (req) => {
+    const list = Mock.mock({
+        ['list|20']: [
+            {
+                pips: random,
+                order: account, // order num
+                signalBrokerId: random,
+                signalAccount: account,
+                signalName: str,
+                signalAccountIndex: account,
+                signalOrder: account,
+                brokerLots: random,
+                //
+                account,  
+                brokerId: random,
+                closePrice: random, // 平仓价
+                commission: random,
+                lots: random,
+                netProfit: random,
+                openPrice: random, // 开仓价
+                openTime: random,
+                profit: random, // pl
+                sl: random,
+                swaps: random,
+                symbol: str,
+                tp: random,
+                'tradeType|1': [0,1], // 0 buy || 1 sell
+            }
+        ]
+    }).list
+
+    const pageIndex = req.body.pageSize || 1;
+    const pageSize = pageIndex > 10 ? 0 : req.body.pageSize || 20;
+    return Mock.mock({
+        items: list,
+        sum: Mock.mock({
+            sum: {
+                totalCommission: random,
+                totalCount: random,
+                totalLots: random,
+                totalNetProfit: random,
+                totalProfit: random,
+                totalSwaps: random
+            }
+        }).sum,
+        totalCount: `@integer(${pageIndex * pageSize},300)`
+    });
+}
+
 
 const useRouter = (router) => {
       router.get('/tradeAccount/my/list', async (req, res, next) => {
@@ -365,6 +513,16 @@ const useRouter = (router) => {
 
       router.get('/follow/setFollowRiskControl', async (req, res, next) => {
         res.json(await success(null))
+      })
+
+      router.get('/tradeOrder/history/follow', async (req, res, next) => {
+        res.json(await success(getTradeOrderHistoryFollow(req)))
+      })
+      router.get('/tradeOrder/history', async (req, res, next) => {
+        res.json(await success(getTradeOrderHistory(req)))
+      })
+      router.get('/tradeOrder/position', async (req, res, next) => {
+        res.json(await success(getTradeOrderPosition(req)))
       })
 }
 

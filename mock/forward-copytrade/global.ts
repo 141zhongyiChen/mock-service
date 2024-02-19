@@ -27,8 +27,13 @@ const getCommunityList = (req) => {
     return Mock.mock({
         ['list|4']: [
             {
-                id: '@integer(60, 1000)',
-                communityName: '@last(11)',
+                'id|+1': [34,35,36,37],
+                'communityName|+1': [
+                    'Test1 communityName communityName',
+                    'Test1238409287409237',
+                    'fadf09uq0jlkhaklh23',
+                    'communityNamecommunityNamecommunityName',
+                ],
                 icon: '@img(64x64,@color,avatar)'
             }
         ]
@@ -39,8 +44,13 @@ const getChannelList = (req) => {
     return Mock.mock({
         ['list|4']: [
             {
-                id: '@integer(60, 1000)',
-                channelName: '@last(11)',
+                'id|+1': [3004,3005,3006,3007],
+                'channelName|+1': [
+                    'Test1 channelName channelName',
+                    'Test1238409287409237',
+                    'fadf09uq0jlkhaklh23',
+                    'ChannelNamechannelNamechannelName',
+                ],
                 categoryId: '@integer(60, 1000)',
                 categoryName: '@last(11)'
             }

@@ -1,10 +1,10 @@
 const Mock = require("mockjs");
 
-export const uid = '@integer(60, 1000)';
+export const uid = '@integer(60, 10000)';
 
-export const negative = '@integer(-1000, 0)';
+export const negative = '@integer(-10000, 0)';
 
-export const random = '@integer(-1000, 1000)';
+export const random = '@integer(-10000, 10000)';
 
 export const str = '@last(11)';
 
